@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Attendence" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="attendances" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Class" syncable="YES">
+        <attribute name="maxStudents" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minAge" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Material" inverseName="classesThatUses" inverseEntity="Material" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="attendingClass" inverseEntity="Student" syncable="YES"/>
+        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="responsibleClasses" inverseEntity="Teacher" syncable="YES"/>
+    </entity>
+    <entity name="Material" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="classesThatUses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="materials" inverseEntity="Class" syncable="YES"/>
+    </entity>
+    <entity name="Student" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attendances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendence" inverseName="student" inverseEntity="Attendence" syncable="YES"/>
+        <relationship name="attendingClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="students" inverseEntity="Class" syncable="YES"/>
+    </entity>
+    <entity name="Teacher" syncable="YES">
+        <attribute name="formation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="responsibleClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="teachers" inverseEntity="Class" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Class" positionX="-198" positionY="-27" width="128" height="133"/>
+        <element name="Student" positionX="70" positionY="-252" width="128" height="133"/>
+        <element name="Attendence" positionX="306" positionY="-99" width="128" height="73"/>
+        <element name="Material" positionX="-182" positionY="-243" width="128" height="88"/>
+        <element name="Teacher" positionX="79" positionY="140" width="128" height="103"/>
+    </elements>
+</model>
