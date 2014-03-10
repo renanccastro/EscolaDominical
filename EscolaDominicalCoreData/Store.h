@@ -15,4 +15,5 @@
 
 - (void)saveContext;
 - (NSManagedObjectContext*)newPrivateContext;
++ (id)sharedManager;
 @end
