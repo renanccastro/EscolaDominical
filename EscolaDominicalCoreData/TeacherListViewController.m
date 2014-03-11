@@ -1,23 +1,22 @@
 //
-//  StudentsSelectionViewController.m
+//  TeacherListViewController.m
 //  EscolaDominicalCoreData
 //
-//  Created by Renan Camargo de Castro on 10/03/14.
+//  Created by Renan Camargo de Castro on 11/03/14.
 //  Copyright (c) 2014 BEPiD. All rights reserved.
 //
 
-#import "StudentsSelectionViewController.h"
-#import "Student+CoreDataMethods.h"
-#import "SelectionCell.h"
+#import "TeacherListViewController.h"
+#import "StudentCell.h"
+#import "Teacher.h"
 #import "Store.h"
 
-@interface StudentsSelectionViewController () <NSFetchedResultsControllerDelegate>
-@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic) NSManagedObjectContext *context;
-
+@interface TeacherListViewController () <NSFetchedResultsControllerDelegate>
+@property (nonatomic) NSManagedObjectContext* context;
+@property (nonatomic) NSFetchedResultsController* fetchedResultsController;
 @end
 
-@implementation StudentsSelectionViewController
+@implementation TeacherListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,19 +37,18 @@
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
+	
 }
-- (IBAction)didChangeSwitch:(UISwitch*)sender {
-	CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
-	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
-	[self didChangeStatusSwitch:indexPath toStatus:sender.isOn];
+-(void)viewWillAppear:(BOOL)animated{
+	[self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)switchChanged:(id)sender {
+	self.fetchedResultsController = nil;
+	
 }
 
 #pragma mark Core Data methods
@@ -63,18 +61,18 @@
 	
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
-								   entityForName:@"Student" inManagedObjectContext:self.context];
+								   entityForName:@"Teacher" inManagedObjectContext:self.context];
     [fetchRequest setEntity:entity];
 	
     NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-							  initWithKey:@"name" ascending:YES];
+							  initWithKey:@"name" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
 	
     [fetchRequest setFetchBatchSize:20];
 	
     NSFetchedResultsController *theFetchedResultsController =
 	[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-										managedObjectContext:self.context sectionNameKeyPath:@"name"
+										managedObjectContext:self.context sectionNameKeyPath:nil
 												   cacheName:@"Root"];
     self.fetchedResultsController = theFetchedResultsController;
     _fetchedResultsController.delegate = self;
@@ -103,7 +101,7 @@
             break;
 			
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:(SelectionCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(StudentCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
 			
         case NSFetchedResultsChangeMove:
@@ -137,17 +135,6 @@
 }
 
 
--(void)didChangeStatusSwitch:(NSIndexPath*) indexPath toStatus:(BOOL)status{
-	Student* selectedStudent = [_fetchedResultsController objectAtIndexPath:indexPath];
-	NSLog(@"%@",selectedStudent.name);
-	if (status) {
-		[self.selectedStudents addObject:selectedStudent];
-	}
-	else{
-		[self.selectedStudents removeObject:selectedStudent];
-	}
-}
-
 #pragma mark	UITableView Methods
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -157,14 +144,15 @@
     return [sectionInfo numberOfObjects];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-	return [[self.fetchedResultsController sections] count];
+	return 1;
 }
 
-- (void)configureCell:(SelectionCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Student *info = [_fetchedResultsController objectAtIndexPath:indexPath];
+- (void)configureCell:(StudentCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Teacher *info = [_fetchedResultsController objectAtIndexPath:indexPath];
     cell.name.text = info.name;
-	cell.photo.image = [UIImage imageWithData:info.photo];
-	cell.selectedStatus.on = [self.selectedStudents containsObject:info];
+	
+	//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
+	//								 info.city, info.state];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -172,7 +160,7 @@
 	
     static NSString *CellIdentifier = @"Cell";
 	
-    SelectionCell *cell =
+    StudentCell *cell =
 	[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
     // Set up the cell...
@@ -181,12 +169,5 @@
     return cell;
 }
 
-- (NSArray *) sectionIndexTitlesForTableView: (UITableView *) tableView
-{
-    return [self.fetchedResultsController sectionIndexTitles];
-}
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
-}
+
 @end

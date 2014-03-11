@@ -8,9 +8,19 @@
 
 #import "ClassRegistryViewController.h"
 #import "StudentsSelectionViewController.h"
+#import "TeachersSelectionViewController.h"
+#import "Classroom+CoreDataMethods.h"
+#import "MaterialsSelectionViewController.h"
+#import "Store.h"
 
 @interface ClassRegistryViewController ()
-@property (nonatomic) NSMutableArray* selectedStudents;
+@property (nonatomic) NSMutableSet* selectedStudents;
+@property (nonatomic) NSMutableSet* selectedTeachers;
+@property (nonatomic) NSMutableSet* selectedMaterials;
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UILabel *minAge;
+@property (weak, nonatomic) IBOutlet UILabel *maxStudents;
+@property (nonatomic) NSManagedObjectContext* context;
 @end
 
 @implementation ClassRegistryViewController
@@ -23,11 +33,21 @@
     }
     return self;
 }
+- (IBAction)minAgeChanged:(UIStepper*)sender {
+	self.minAge.text = [NSString stringWithFormat:@"%1.0f", [sender value]];
+}
+- (IBAction)maxStudentsChanged:(UIStepper*)sender {
+	self.maxStudents.text = [NSString stringWithFormat:@"%1.0f", [sender value]];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.selectedStudents = [[NSMutableArray alloc] init];
+	self.context = [[Store sharedManager] newPrivateContext];
+	self.context.undoManager = nil;
+
+	self.selectedStudents = [[NSMutableSet alloc] init];
+	self.selectedTeachers = [[NSMutableSet alloc] init];
 }
 -(void)viewWillAppear:(BOOL)animated{
 	NSLog(@"%@", self.selectedStudents);
@@ -43,7 +63,24 @@
 	if ([[segue identifier]isEqualToString:@"students"]) {
 		StudentsSelectionViewController * students = [segue destinationViewController];
 		students.selectedStudents = self.selectedStudents;
+	} else if([[segue identifier]isEqualToString:@"teachers"]) {
+		TeachersSelectionViewController * teachers = [segue destinationViewController];
+		teachers.selectedTeachers = self.selectedTeachers;
+	} else if([[segue identifier]isEqualToString:@"materials"]) {
+		MaterialsSelectionViewController * materials = [segue destinationViewController];
+		materials.selectedMaterials = self.selectedMaterials;
 	}
+
+}
+- (IBAction)createClass:(id)sender {
+	[self.context performBlockAndWait:^{
+		NSNumber* maxStudents = [NSNumber numberWithInt:[self.maxStudents.text intValue] ];
+		NSNumber* minAge = [NSNumber numberWithInt:[self.minAge.text intValue] ];
+		
+		Classroom* classroom = [Classroom createNewClassroomInContext:self.context WithName:self.name.text withMaxStudents:maxStudents withMinAge:minAge withMaterials:self.selectedMaterials withStudents:self.selectedStudents andWithTeachers:self.selectedTeachers];
+		NSLog(@"%@",classroom.name);
+		
+	}];
 }
 
 @end

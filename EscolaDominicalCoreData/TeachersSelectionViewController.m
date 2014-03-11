@@ -7,8 +7,13 @@
 //
 
 #import "TeachersSelectionViewController.h"
+#import "Teacher.h"
+#import "Store.h"
+#import "SelectionCell.h"
 
-@interface TeachersSelectionViewController ()
+@interface TeachersSelectionViewController () <NSFetchedResultsControllerDelegate>
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSManagedObjectContext *context;
 
 @end
 
@@ -26,12 +31,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.context = [[Store sharedManager] mainManagedObjectContext];
+	self.context.undoManager = nil;
+	
+	NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+}
+- (IBAction)didChangeSwitch:(UISwitch*)sender {
+	CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+	[self didChangeStatusSwitch:indexPath toStatus:sender.isOn];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,69 +53,142 @@
 - (IBAction)switchChanged:(id)sender {
 }
 
-#pragma mark - Table view data source
+#pragma mark Core Data methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (NSFetchedResultsController *)fetchedResultsController {
+	
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+	
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+								   entityForName:@"Teacher" inManagedObjectContext:self.context];
+    [fetchRequest setEntity:entity];
+	
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+							  initWithKey:@"name" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+	
+    [fetchRequest setFetchBatchSize:20];
+	
+    NSFetchedResultsController *theFetchedResultsController =
+	[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+										managedObjectContext:self.context sectionNameKeyPath:@"name"
+												   cacheName:@"Root"];
+    self.fetchedResultsController = theFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+	
+    return _fetchedResultsController;
+	
+}
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
+    [self.tableView beginUpdates];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+	
+    UITableView *tableView = self.tableView;
+	
+    switch(type) {
+			
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+			
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+			
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:(SelectionCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+			
+        case NSFetchedResultsChangeMove:
+			[tableView deleteRowsAtIndexPaths:[NSArray
+											   arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[tableView insertRowsAtIndexPaths:[NSArray
+											   arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+    }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+	
+    switch(type) {
+			
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+			
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
+    [self.tableView endUpdates];
+}
+
+
+-(void)didChangeStatusSwitch:(NSIndexPath*) indexPath toStatus:(BOOL)status{
+	Teacher* selectedTeacher = [_fetchedResultsController objectAtIndexPath:indexPath];
+	NSLog(@"%@",selectedTeacher.name);
+	if (status) {
+		[self.selectedTeachers addObject:selectedTeacher];
+	}
+	else{
+		[self.selectedTeachers removeObject:selectedTeacher];
+	}
+}
+
+#pragma mark	UITableView Methods
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    id  sectionInfo =
+	[[_fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+	return [[self.fetchedResultsController sections] count];
+}
+
+- (void)configureCell:(SelectionCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Teacher *info = [_fetchedResultsController objectAtIndexPath:indexPath];
+	NSLog(@"%@",info.name);
+    cell.name.text = info.name;
+	cell.photo.image = [UIImage imageWithData:info.photo];
+	cell.selectedStatus.on = [self.selectedTeachers containsObject:info];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+	
+    SelectionCell *cell =
+	[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	
+    // Set up the cell...
+    [self configureCell:cell atIndexPath:indexPath];
+	
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSArray *) sectionIndexTitlesForTableView: (UITableView *) tableView
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return [self.fetchedResultsController sectionIndexTitles];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 @end

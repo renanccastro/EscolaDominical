@@ -34,7 +34,10 @@
 		student.address = address;
 		NSError *error;
 		[context save:&error];
-		[context.parentContext save:&error];
+		[context.parentContext performBlock:^{
+			NSError *error;
+			[context.parentContext save:&error];
+		}];
 		
 	}
 	return student;

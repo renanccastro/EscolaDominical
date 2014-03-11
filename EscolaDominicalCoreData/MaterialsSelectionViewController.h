@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MaterialsSelectionViewController : UITableViewController
-
+@property (nonatomic) NSMutableSet* selectedMaterials;
 @end

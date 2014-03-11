@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface StudentsSelectionViewController : UITableViewController
-@property (nonatomic) NSMutableArray* selectedStudents;
+@property (nonatomic) NSMutableSet* selectedStudents;
 @end

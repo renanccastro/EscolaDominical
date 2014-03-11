@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E842D28F18CF73EE003192BF /* Classroom+CoreDataMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D28E18CF73EE003192BF /* Classroom+CoreDataMethods.m */; };
+		E842D29218CF8989003192BF /* ClassListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29118CF8989003192BF /* ClassListTableViewController.m */; };
+		E842D29518CF8C07003192BF /* TeacherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29418CF8C07003192BF /* TeacherListViewController.m */; };
+		E842D29818CF8C18003192BF /* TeacherRegistryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29718CF8C18003192BF /* TeacherRegistryViewController.m */; };
+		E842D29B18CF8D9E003192BF /* Teacher+CoreDataMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29A18CF8D9E003192BF /* Teacher+CoreDataMethods.m */; };
+		E842D29E18CF8E13003192BF /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29D18CF8E13003192BF /* Teacher.m */; };
 		E84EC9F818BE624D0033740D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84EC9F718BE624D0033740D /* Foundation.framework */; };
 		E84EC9FA18BE624D0033740D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84EC9F918BE624D0033740D /* CoreGraphics.framework */; };
 		E84EC9FC18BE624D0033740D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84EC9FB18BE624D0033740D /* UIKit.framework */; };
@@ -28,7 +34,6 @@
 		E85B1FA618BFACEF00A622CB /* PhoneFormats.dat in Resources */ = {isa = PBXBuildFile; fileRef = E85B1FA518BFACEF00A622CB /* PhoneFormats.dat */; };
 		E85B1FBA18BFB63800A622CB /* Student+CoreDataMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E85B1FB918BFB63800A622CB /* Student+CoreDataMethods.m */; };
 		E895E16318CE493900D814C0 /* Material.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16218CE493900D814C0 /* Material.m */; };
-		E895E16618CE493900D814C0 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16518CE493900D814C0 /* Teacher.m */; };
 		E895E16918CE493900D814C0 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16818CE493900D814C0 /* Student.m */; };
 		E895E16C18CE493900D814C0 /* Attendence.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16B18CE493900D814C0 /* Attendence.m */; };
 		E895E16F18CE493900D814C0 /* Classroom.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16E18CE493900D814C0 /* Classroom.m */; };
@@ -52,6 +57,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E842D28D18CF73EE003192BF /* Classroom+CoreDataMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Classroom+CoreDataMethods.h"; sourceTree = "<group>"; };
+		E842D28E18CF73EE003192BF /* Classroom+CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Classroom+CoreDataMethods.m"; sourceTree = "<group>"; };
+		E842D29018CF8989003192BF /* ClassListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassListTableViewController.h; sourceTree = "<group>"; };
+		E842D29118CF8989003192BF /* ClassListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassListTableViewController.m; sourceTree = "<group>"; };
+		E842D29318CF8C07003192BF /* TeacherListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherListViewController.h; sourceTree = "<group>"; };
+		E842D29418CF8C07003192BF /* TeacherListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherListViewController.m; sourceTree = "<group>"; };
+		E842D29618CF8C18003192BF /* TeacherRegistryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherRegistryViewController.h; sourceTree = "<group>"; };
+		E842D29718CF8C18003192BF /* TeacherRegistryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherRegistryViewController.m; sourceTree = "<group>"; };
+		E842D29918CF8D9E003192BF /* Teacher+CoreDataMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Teacher+CoreDataMethods.h"; sourceTree = "<group>"; };
+		E842D29A18CF8D9E003192BF /* Teacher+CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Teacher+CoreDataMethods.m"; sourceTree = "<group>"; };
+		E842D29C18CF8E13003192BF /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		E842D29D18CF8E13003192BF /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		E84EC9F418BE624D0033740D /* EscolaDominicalCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscolaDominicalCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84EC9F718BE624D0033740D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E84EC9F918BE624D0033740D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,8 +99,6 @@
 		E85B1FB918BFB63800A622CB /* Student+CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataMethods.m"; sourceTree = "<group>"; };
 		E895E16118CE493900D814C0 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
 		E895E16218CE493900D814C0 /* Material.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Material.m; sourceTree = "<group>"; };
-		E895E16418CE493900D814C0 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
-		E895E16518CE493900D814C0 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		E895E16718CE493900D814C0 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		E895E16818CE493900D814C0 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		E895E16A18CE493900D814C0 /* Attendence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendence.h; sourceTree = "<group>"; };
@@ -180,10 +195,14 @@
 				E84EC9FE18BE624D0033740D /* Supporting Files */,
 				E85B1F9E18BF9EE300A622CB /* StudentRegistryViewController.h */,
 				E85B1F9F18BF9EE300A622CB /* StudentRegistryViewController.m */,
+				E842D29618CF8C18003192BF /* TeacherRegistryViewController.h */,
+				E842D29718CF8C18003192BF /* TeacherRegistryViewController.m */,
 				E8B92B4B18CE24A400D2C94F /* StudentCell.h */,
 				E8B92B4C18CE24A400D2C94F /* StudentCell.m */,
 				E8B92B4E18CE25CB00D2C94F /* StudentListViewController.h */,
 				E8B92B4F18CE25CB00D2C94F /* StudentListViewController.m */,
+				E842D29318CF8C07003192BF /* TeacherListViewController.h */,
+				E842D29418CF8C07003192BF /* TeacherListViewController.m */,
 				E8ACAFB618CE459100BB8F18 /* SelectionCell.h */,
 				E8ACAFB718CE459100BB8F18 /* SelectionCell.m */,
 				E8ACAFB918CE466D00BB8F18 /* MaterialsSelectionViewController.h */,
@@ -194,6 +213,8 @@
 				E8ACAFC018CE46A400BB8F18 /* TeachersSelectionViewController.m */,
 				E895E17018CE4BDC00D814C0 /* ClassRegistryViewController.h */,
 				E895E17118CE4BDC00D814C0 /* ClassRegistryViewController.m */,
+				E842D29018CF8989003192BF /* ClassListTableViewController.h */,
+				E842D29118CF8989003192BF /* ClassListTableViewController.m */,
 			);
 			path = EscolaDominicalCoreData;
 			sourceTree = "<group>";
@@ -235,9 +256,9 @@
 				E895E16A18CE493900D814C0 /* Attendence.h */,
 				E895E16B18CE493900D814C0 /* Attendence.m */,
 				E895E16718CE493900D814C0 /* Student.h */,
+				E842D29C18CF8E13003192BF /* Teacher.h */,
+				E842D29D18CF8E13003192BF /* Teacher.m */,
 				E895E16818CE493900D814C0 /* Student.m */,
-				E895E16418CE493900D814C0 /* Teacher.h */,
-				E895E16518CE493900D814C0 /* Teacher.m */,
 				E895E16118CE493900D814C0 /* Material.h */,
 				E895E16218CE493900D814C0 /* Material.m */,
 				E85B1FB718BFB61A00A622CB /* Categories */,
@@ -250,6 +271,10 @@
 			children = (
 				E85B1FB818BFB63800A622CB /* Student+CoreDataMethods.h */,
 				E85B1FB918BFB63800A622CB /* Student+CoreDataMethods.m */,
+				E842D28D18CF73EE003192BF /* Classroom+CoreDataMethods.h */,
+				E842D28E18CF73EE003192BF /* Classroom+CoreDataMethods.m */,
+				E842D29918CF8D9E003192BF /* Teacher+CoreDataMethods.h */,
+				E842D29A18CF8D9E003192BF /* Teacher+CoreDataMethods.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -354,13 +379,18 @@
 			files = (
 				E8B92B4D18CE24A400D2C94F /* StudentCell.m in Sources */,
 				E895E16318CE493900D814C0 /* Material.m in Sources */,
+				E842D29B18CF8D9E003192BF /* Teacher+CoreDataMethods.m in Sources */,
 				E8ACAFB818CE459100BB8F18 /* SelectionCell.m in Sources */,
+				E842D28F18CF73EE003192BF /* Classroom+CoreDataMethods.m in Sources */,
 				E8ACAFBB18CE466D00BB8F18 /* MaterialsSelectionViewController.m in Sources */,
 				E895E17218CE4BDC00D814C0 /* ClassRegistryViewController.m in Sources */,
+				E842D29218CF8989003192BF /* ClassListTableViewController.m in Sources */,
+				E842D29E18CF8E13003192BF /* Teacher.m in Sources */,
 				E84ECA3318BE638C0033740D /* EscolaDominical.xcdatamodeld in Sources */,
-				E895E16618CE493900D814C0 /* Teacher.m in Sources */,
 				E85B1FBA18BFB63800A622CB /* Student+CoreDataMethods.m in Sources */,
+				E842D29818CF8C18003192BF /* TeacherRegistryViewController.m in Sources */,
 				E8ACAFC118CE46A400BB8F18 /* TeachersSelectionViewController.m in Sources */,
+				E842D29518CF8C07003192BF /* TeacherListViewController.m in Sources */,
 				E895E16918CE493900D814C0 /* Student.m in Sources */,
 				E895E16F18CE493900D814C0 /* Classroom.m in Sources */,
 				E895E16C18CE493900D814C0 /* Attendence.m in Sources */,
