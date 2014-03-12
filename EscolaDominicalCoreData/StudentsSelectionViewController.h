@@ -10,4 +10,5 @@
 
 @interface StudentsSelectionViewController : UITableViewController
 @property (nonatomic) NSMutableSet* selectedStudents;
+@property (nonatomic) NSManagedObjectContext *context;
 @end

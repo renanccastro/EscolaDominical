@@ -9,6 +9,7 @@
 #import "ClassListTableViewController.h"
 #import "Store.h"
 #import "Classroom.h"
+#import "StudentCell.h"
 
 @interface ClassListTableViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic) NSManagedObjectContext* context;
@@ -100,7 +101,7 @@
             break;
 			
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(StudentCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
 			
         case NSFetchedResultsChangeMove:
@@ -146,9 +147,9 @@
 	return 1;
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(StudentCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Classroom *info = [_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = info.name;
+    cell.name.text = info.name;
 	
 	//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
 	//								 info.city, info.state];
@@ -159,11 +160,8 @@
 	
     static NSString *CellIdentifier = @"Cell";
 	
-    UITableViewCell *cell =
+    StudentCell *cell =
 	[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	if (!cell){
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-	}
 	
     // Set up the cell...
     [self configureCell:cell atIndexPath:indexPath];

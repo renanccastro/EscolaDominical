@@ -47,6 +47,7 @@
 	self.context.undoManager = nil;
 
 	self.selectedStudents = [[NSMutableSet alloc] init];
+	self.selectedMaterials = [[NSMutableSet alloc] init];
 	self.selectedTeachers = [[NSMutableSet alloc] init];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -63,12 +64,15 @@
 	if ([[segue identifier]isEqualToString:@"students"]) {
 		StudentsSelectionViewController * students = [segue destinationViewController];
 		students.selectedStudents = self.selectedStudents;
+		students.context = self.context;
 	} else if([[segue identifier]isEqualToString:@"teachers"]) {
 		TeachersSelectionViewController * teachers = [segue destinationViewController];
 		teachers.selectedTeachers = self.selectedTeachers;
+		teachers.context = self.context;
 	} else if([[segue identifier]isEqualToString:@"materials"]) {
 		MaterialsSelectionViewController * materials = [segue destinationViewController];
 		materials.selectedMaterials = self.selectedMaterials;
+		materials.context = self.context;
 	}
 
 }
@@ -77,10 +81,29 @@
 		NSNumber* maxStudents = [NSNumber numberWithInt:[self.maxStudents.text intValue] ];
 		NSNumber* minAge = [NSNumber numberWithInt:[self.minAge.text intValue] ];
 		
-		Classroom* classroom = [Classroom createNewClassroomInContext:self.context WithName:self.name.text withMaxStudents:maxStudents withMinAge:minAge withMaterials:self.selectedMaterials withStudents:self.selectedStudents andWithTeachers:self.selectedTeachers];
+		Classroom* classroom = [Classroom createNewClassroomInContext:self.context WithName:[self.name.text isEqualToString:@"type here"] ? nil : self.name.text withMaxStudents:maxStudents withMinAge:minAge withMaterials:self.selectedMaterials withStudents:self.selectedStudents andWithTeachers:self.selectedTeachers];
 		NSLog(@"%@",classroom.name);
 		
 	}];
 }
+
+-(BOOL) textFieldShouldBeginEditing:(UITextField *)textField{
+	if ([textField.text isEqualToString:@"type here"]) {
+		textField.text = @"";
+	}
+	return YES;
+}
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+	if ([textField.text isEqualToString:@""]) {
+		textField.text = @"type here";
+	}
+	return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+	[textField resignFirstResponder];
+	return YES;
+}
+
 
 @end

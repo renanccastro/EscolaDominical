@@ -8,6 +8,7 @@
         <attribute name="maxStudents" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="minAge" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Material" inverseName="classesThatUses" inverseEntity="Material" syncable="YES"/>
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="attendingClass" inverseEntity="Student" syncable="YES"/>
         <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="responsibleClasses" inverseEntity="Teacher" syncable="YES"/>
@@ -16,7 +17,7 @@
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="classesThatUses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" inverseName="materials" inverseEntity="Classroom" syncable="YES"/>
+        <relationship name="classesThatUses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Classroom" inverseName="materials" inverseEntity="Classroom" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -38,7 +39,7 @@
     </entity>
     <elements>
         <element name="Attendence" positionX="0" positionY="0" width="128" height="75"/>
-        <element name="Classroom" positionX="-225" positionY="-378" width="128" height="135"/>
+        <element name="Classroom" positionX="-225" positionY="-378" width="128" height="28"/>
         <element name="Material" positionX="70" positionY="-198" width="128" height="105"/>
         <element name="Student" positionX="-459" positionY="-225" width="128" height="150"/>
         <element name="Teacher" positionX="79" positionY="-171" width="128" height="28"/>

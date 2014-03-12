@@ -13,7 +13,7 @@
 
 @interface MaterialsSelectionViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic) NSManagedObjectContext *context;
+
 
 @end
 
@@ -31,9 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.context = [[Store sharedManager] mainManagedObjectContext];
-	self.context.undoManager = nil;
-	
 	NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -49,8 +46,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)switchChanged:(id)sender {
 }
 
 #pragma mark Core Data methods
@@ -163,7 +158,7 @@
 - (void)configureCell:(SelectionCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Material *info = [_fetchedResultsController objectAtIndexPath:indexPath];
     cell.name.text = info.name;
-	cell.photo.image = [UIImage imageWithData:info.photo];
+	cell.photo.image = info.photo ? [UIImage imageWithData:info.photo] : [UIImage imageNamed:@"noPhoto"];
 	cell.selectedStatus.on = [self.selectedMaterials containsObject:info];
 }
 

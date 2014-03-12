@@ -12,7 +12,16 @@
 		E842D29518CF8C07003192BF /* TeacherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29418CF8C07003192BF /* TeacherListViewController.m */; };
 		E842D29818CF8C18003192BF /* TeacherRegistryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29718CF8C18003192BF /* TeacherRegistryViewController.m */; };
 		E842D29B18CF8D9E003192BF /* Teacher+CoreDataMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29A18CF8D9E003192BF /* Teacher+CoreDataMethods.m */; };
-		E842D29E18CF8E13003192BF /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D29D18CF8E13003192BF /* Teacher.m */; };
+		E842D2A118D0CB7F003192BF /* MaterialsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2A018D0CB7F003192BF /* MaterialsListViewController.m */; };
+		E842D2A418D0CC23003192BF /* MaterialRegistryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2A318D0CC23003192BF /* MaterialRegistryViewController.m */; };
+		E842D2A718D0CD52003192BF /* Material+CoreDataMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2A618D0CD52003192BF /* Material+CoreDataMethods.m */; };
+		E842D2AA18D0E96B003192BF /* MaterialCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2A918D0E96B003192BF /* MaterialCollectionViewController.m */; };
+		E842D2AE18D0EAA7003192BF /* ClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2AD18D0EAA7003192BF /* ClassCell.m */; };
+		E842D2CA18D0EFFF003192BF /* Classroom.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2C918D0EFFF003192BF /* Classroom.m */; };
+		E842D2CD18D0F000003192BF /* Material.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2CC18D0F000003192BF /* Material.m */; };
+		E842D2D018D0F000003192BF /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2CF18D0F000003192BF /* Student.m */; };
+		E842D2D318D0F001003192BF /* Attendence.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2D218D0F001003192BF /* Attendence.m */; };
+		E842D2D618D0F001003192BF /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = E842D2D518D0F001003192BF /* Teacher.m */; };
 		E84EC9F818BE624D0033740D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84EC9F718BE624D0033740D /* Foundation.framework */; };
 		E84EC9FA18BE624D0033740D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84EC9F918BE624D0033740D /* CoreGraphics.framework */; };
 		E84EC9FC18BE624D0033740D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84EC9FB18BE624D0033740D /* UIKit.framework */; };
@@ -33,10 +42,6 @@
 		E85B1FA018BF9EE300A622CB /* StudentRegistryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85B1F9F18BF9EE300A622CB /* StudentRegistryViewController.m */; };
 		E85B1FA618BFACEF00A622CB /* PhoneFormats.dat in Resources */ = {isa = PBXBuildFile; fileRef = E85B1FA518BFACEF00A622CB /* PhoneFormats.dat */; };
 		E85B1FBA18BFB63800A622CB /* Student+CoreDataMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E85B1FB918BFB63800A622CB /* Student+CoreDataMethods.m */; };
-		E895E16318CE493900D814C0 /* Material.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16218CE493900D814C0 /* Material.m */; };
-		E895E16918CE493900D814C0 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16818CE493900D814C0 /* Student.m */; };
-		E895E16C18CE493900D814C0 /* Attendence.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16B18CE493900D814C0 /* Attendence.m */; };
-		E895E16F18CE493900D814C0 /* Classroom.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E16E18CE493900D814C0 /* Classroom.m */; };
 		E895E17218CE4BDC00D814C0 /* ClassRegistryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E17118CE4BDC00D814C0 /* ClassRegistryViewController.m */; };
 		E8ACAFB818CE459100BB8F18 /* SelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ACAFB718CE459100BB8F18 /* SelectionCell.m */; };
 		E8ACAFBB18CE466D00BB8F18 /* MaterialsSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ACAFBA18CE466D00BB8F18 /* MaterialsSelectionViewController.m */; };
@@ -67,8 +72,26 @@
 		E842D29718CF8C18003192BF /* TeacherRegistryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherRegistryViewController.m; sourceTree = "<group>"; };
 		E842D29918CF8D9E003192BF /* Teacher+CoreDataMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Teacher+CoreDataMethods.h"; sourceTree = "<group>"; };
 		E842D29A18CF8D9E003192BF /* Teacher+CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Teacher+CoreDataMethods.m"; sourceTree = "<group>"; };
-		E842D29C18CF8E13003192BF /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
-		E842D29D18CF8E13003192BF /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		E842D29F18D0CB7F003192BF /* MaterialsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsListViewController.h; sourceTree = "<group>"; };
+		E842D2A018D0CB7F003192BF /* MaterialsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsListViewController.m; sourceTree = "<group>"; };
+		E842D2A218D0CC23003192BF /* MaterialRegistryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialRegistryViewController.h; sourceTree = "<group>"; };
+		E842D2A318D0CC23003192BF /* MaterialRegistryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialRegistryViewController.m; sourceTree = "<group>"; };
+		E842D2A518D0CD52003192BF /* Material+CoreDataMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Material+CoreDataMethods.h"; sourceTree = "<group>"; };
+		E842D2A618D0CD52003192BF /* Material+CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Material+CoreDataMethods.m"; sourceTree = "<group>"; };
+		E842D2A818D0E96B003192BF /* MaterialCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialCollectionViewController.h; sourceTree = "<group>"; };
+		E842D2A918D0E96B003192BF /* MaterialCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialCollectionViewController.m; sourceTree = "<group>"; };
+		E842D2AC18D0EAA7003192BF /* ClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCell.h; sourceTree = "<group>"; };
+		E842D2AD18D0EAA7003192BF /* ClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCell.m; sourceTree = "<group>"; };
+		E842D2C818D0EFFF003192BF /* Classroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Classroom.h; sourceTree = "<group>"; };
+		E842D2C918D0EFFF003192BF /* Classroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Classroom.m; sourceTree = "<group>"; };
+		E842D2CB18D0F000003192BF /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
+		E842D2CC18D0F000003192BF /* Material.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Material.m; sourceTree = "<group>"; };
+		E842D2CE18D0F000003192BF /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		E842D2CF18D0F000003192BF /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		E842D2D118D0F000003192BF /* Attendence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendence.h; sourceTree = "<group>"; };
+		E842D2D218D0F001003192BF /* Attendence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendence.m; sourceTree = "<group>"; };
+		E842D2D418D0F001003192BF /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		E842D2D518D0F001003192BF /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		E84EC9F418BE624D0033740D /* EscolaDominicalCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscolaDominicalCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84EC9F718BE624D0033740D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E84EC9F918BE624D0033740D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,14 +120,6 @@
 		E85B1FA518BFACEF00A622CB /* PhoneFormats.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = PhoneFormats.dat; sourceTree = "<group>"; };
 		E85B1FB818BFB63800A622CB /* Student+CoreDataMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataMethods.h"; sourceTree = "<group>"; };
 		E85B1FB918BFB63800A622CB /* Student+CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataMethods.m"; sourceTree = "<group>"; };
-		E895E16118CE493900D814C0 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
-		E895E16218CE493900D814C0 /* Material.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Material.m; sourceTree = "<group>"; };
-		E895E16718CE493900D814C0 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		E895E16818CE493900D814C0 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		E895E16A18CE493900D814C0 /* Attendence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attendence.h; sourceTree = "<group>"; };
-		E895E16B18CE493900D814C0 /* Attendence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attendence.m; sourceTree = "<group>"; };
-		E895E16D18CE493900D814C0 /* Classroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Classroom.h; sourceTree = "<group>"; };
-		E895E16E18CE493900D814C0 /* Classroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Classroom.m; sourceTree = "<group>"; };
 		E895E17018CE4BDC00D814C0 /* ClassRegistryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassRegistryViewController.h; sourceTree = "<group>"; };
 		E895E17118CE4BDC00D814C0 /* ClassRegistryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassRegistryViewController.m; sourceTree = "<group>"; };
 		E8ACAFB618CE459100BB8F18 /* SelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCell.h; sourceTree = "<group>"; };
@@ -147,6 +162,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E842D2AB18D0EA3E003192BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8B92B4B18CE24A400D2C94F /* StudentCell.h */,
+				E8B92B4C18CE24A400D2C94F /* StudentCell.m */,
+				E8ACAFB618CE459100BB8F18 /* SelectionCell.h */,
+				E8ACAFB718CE459100BB8F18 /* SelectionCell.m */,
+				E842D2AC18D0EAA7003192BF /* ClassCell.h */,
+				E842D2AD18D0EAA7003192BF /* ClassCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		E84EC9EB18BE624D0033740D = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +209,7 @@
 		E84EC9FD18BE624D0033740D /* EscolaDominicalCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				E842D2AB18D0EA3E003192BF /* View */,
 				E85B1FB618BFB60C00A622CB /* Core Data */,
 				E84ECA0618BE624D0033740D /* AppDelegate.h */,
 				E84ECA0718BE624D0033740D /* AppDelegate.m */,
@@ -197,14 +226,14 @@
 				E85B1F9F18BF9EE300A622CB /* StudentRegistryViewController.m */,
 				E842D29618CF8C18003192BF /* TeacherRegistryViewController.h */,
 				E842D29718CF8C18003192BF /* TeacherRegistryViewController.m */,
-				E8B92B4B18CE24A400D2C94F /* StudentCell.h */,
-				E8B92B4C18CE24A400D2C94F /* StudentCell.m */,
+				E842D2A218D0CC23003192BF /* MaterialRegistryViewController.h */,
+				E842D2A318D0CC23003192BF /* MaterialRegistryViewController.m */,
 				E8B92B4E18CE25CB00D2C94F /* StudentListViewController.h */,
 				E8B92B4F18CE25CB00D2C94F /* StudentListViewController.m */,
 				E842D29318CF8C07003192BF /* TeacherListViewController.h */,
 				E842D29418CF8C07003192BF /* TeacherListViewController.m */,
-				E8ACAFB618CE459100BB8F18 /* SelectionCell.h */,
-				E8ACAFB718CE459100BB8F18 /* SelectionCell.m */,
+				E842D29F18D0CB7F003192BF /* MaterialsListViewController.h */,
+				E842D2A018D0CB7F003192BF /* MaterialsListViewController.m */,
 				E8ACAFB918CE466D00BB8F18 /* MaterialsSelectionViewController.h */,
 				E8ACAFBA18CE466D00BB8F18 /* MaterialsSelectionViewController.m */,
 				E8ACAFBC18CE467F00BB8F18 /* StudentsSelectionViewController.h */,
@@ -215,6 +244,8 @@
 				E895E17118CE4BDC00D814C0 /* ClassRegistryViewController.m */,
 				E842D29018CF8989003192BF /* ClassListTableViewController.h */,
 				E842D29118CF8989003192BF /* ClassListTableViewController.m */,
+				E842D2A818D0E96B003192BF /* MaterialCollectionViewController.h */,
+				E842D2A918D0E96B003192BF /* MaterialCollectionViewController.m */,
 			);
 			path = EscolaDominicalCoreData;
 			sourceTree = "<group>";
@@ -251,16 +282,16 @@
 		E85B1FB618BFB60C00A622CB /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				E895E16D18CE493900D814C0 /* Classroom.h */,
-				E895E16E18CE493900D814C0 /* Classroom.m */,
-				E895E16A18CE493900D814C0 /* Attendence.h */,
-				E895E16B18CE493900D814C0 /* Attendence.m */,
-				E895E16718CE493900D814C0 /* Student.h */,
-				E842D29C18CF8E13003192BF /* Teacher.h */,
-				E842D29D18CF8E13003192BF /* Teacher.m */,
-				E895E16818CE493900D814C0 /* Student.m */,
-				E895E16118CE493900D814C0 /* Material.h */,
-				E895E16218CE493900D814C0 /* Material.m */,
+				E842D2D418D0F001003192BF /* Teacher.h */,
+				E842D2D518D0F001003192BF /* Teacher.m */,
+				E842D2D118D0F000003192BF /* Attendence.h */,
+				E842D2D218D0F001003192BF /* Attendence.m */,
+				E842D2CE18D0F000003192BF /* Student.h */,
+				E842D2CF18D0F000003192BF /* Student.m */,
+				E842D2CB18D0F000003192BF /* Material.h */,
+				E842D2CC18D0F000003192BF /* Material.m */,
+				E842D2C818D0EFFF003192BF /* Classroom.h */,
+				E842D2C918D0EFFF003192BF /* Classroom.m */,
 				E85B1FB718BFB61A00A622CB /* Categories */,
 			);
 			name = "Core Data";
@@ -275,6 +306,8 @@
 				E842D28E18CF73EE003192BF /* Classroom+CoreDataMethods.m */,
 				E842D29918CF8D9E003192BF /* Teacher+CoreDataMethods.h */,
 				E842D29A18CF8D9E003192BF /* Teacher+CoreDataMethods.m */,
+				E842D2A518D0CD52003192BF /* Material+CoreDataMethods.h */,
+				E842D2A618D0CD52003192BF /* Material+CoreDataMethods.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -377,30 +410,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E842D2D618D0F001003192BF /* Teacher.m in Sources */,
 				E8B92B4D18CE24A400D2C94F /* StudentCell.m in Sources */,
-				E895E16318CE493900D814C0 /* Material.m in Sources */,
+				E842D2A718D0CD52003192BF /* Material+CoreDataMethods.m in Sources */,
 				E842D29B18CF8D9E003192BF /* Teacher+CoreDataMethods.m in Sources */,
 				E8ACAFB818CE459100BB8F18 /* SelectionCell.m in Sources */,
+				E842D2A418D0CC23003192BF /* MaterialRegistryViewController.m in Sources */,
+				E842D2CD18D0F000003192BF /* Material.m in Sources */,
 				E842D28F18CF73EE003192BF /* Classroom+CoreDataMethods.m in Sources */,
 				E8ACAFBB18CE466D00BB8F18 /* MaterialsSelectionViewController.m in Sources */,
 				E895E17218CE4BDC00D814C0 /* ClassRegistryViewController.m in Sources */,
 				E842D29218CF8989003192BF /* ClassListTableViewController.m in Sources */,
-				E842D29E18CF8E13003192BF /* Teacher.m in Sources */,
 				E84ECA3318BE638C0033740D /* EscolaDominical.xcdatamodeld in Sources */,
 				E85B1FBA18BFB63800A622CB /* Student+CoreDataMethods.m in Sources */,
+				E842D2A118D0CB7F003192BF /* MaterialsListViewController.m in Sources */,
 				E842D29818CF8C18003192BF /* TeacherRegistryViewController.m in Sources */,
 				E8ACAFC118CE46A400BB8F18 /* TeachersSelectionViewController.m in Sources */,
 				E842D29518CF8C07003192BF /* TeacherListViewController.m in Sources */,
-				E895E16918CE493900D814C0 /* Student.m in Sources */,
-				E895E16F18CE493900D814C0 /* Classroom.m in Sources */,
-				E895E16C18CE493900D814C0 /* Attendence.m in Sources */,
+				E842D2D018D0F000003192BF /* Student.m in Sources */,
+				E842D2CA18D0EFFF003192BF /* Classroom.m in Sources */,
 				E84ECA0E18BE624D0033740D /* ViewController.m in Sources */,
 				E84ECA0818BE624D0033740D /* AppDelegate.m in Sources */,
+				E842D2D318D0F001003192BF /* Attendence.m in Sources */,
 				E84ECA0418BE624D0033740D /* main.m in Sources */,
 				E84ECA2E18BE62690033740D /* Store.m in Sources */,
 				E8B92B5018CE25CB00D2C94F /* StudentListViewController.m in Sources */,
 				E85B1FA018BF9EE300A622CB /* StudentRegistryViewController.m in Sources */,
+				E842D2AE18D0EAA7003192BF /* ClassCell.m in Sources */,
 				E8ACAFBE18CE467F00BB8F18 /* StudentsSelectionViewController.m in Sources */,
+				E842D2AA18D0E96B003192BF /* MaterialCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

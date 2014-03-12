@@ -150,7 +150,7 @@
 - (void)configureCell:(StudentCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Teacher *info = [_fetchedResultsController objectAtIndexPath:indexPath];
     cell.name.text = info.name;
-	
+	cell.photo.image = info.photo ? [UIImage imageWithData:info.photo] : [UIImage imageNamed:@"noPhoto"];
 	//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
 	//								 info.city, info.state];
 }

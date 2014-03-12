@@ -10,4 +10,5 @@
 
 @interface MaterialsSelectionViewController : UITableViewController
 @property (nonatomic) NSMutableSet* selectedMaterials;
+@property (nonatomic) NSManagedObjectContext *context;
 @end
