@@ -10,10 +10,12 @@
 #import "StudentCell.h"
 #import "Teacher.h"
 #import "Store.h"
+#import "SeeTeacherViewController.h"
 
 @interface TeacherListViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic) NSManagedObjectContext* context;
 @property (nonatomic) NSFetchedResultsController* fetchedResultsController;
+@property (nonatomic) Teacher* selectedTeacher;
 @end
 
 @implementation TeacherListViewController
@@ -168,6 +170,18 @@
 	
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	self.selectedTeacher = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self performSegueWithIdentifier:@"seeTeacher" sender:nil];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	if ([[segue identifier] isEqualToString:@"seeTeacher"]) {
+		SeeTeacherViewController* vc = [segue destinationViewController];
+		vc.selectedTeacher = self.selectedTeacher;
+	}
+}
+
 
 
 @end

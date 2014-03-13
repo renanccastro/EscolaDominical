@@ -1,23 +1,24 @@
 //
-//  MaterialCollectionViewController.m
+//  SeeTeacherViewController.m
 //  EscolaDominicalCoreData
 //
-//  Created by Renan Camargo de Castro on 12/03/14.
+//  Created by Renan Camargo de Castro on 13/03/14.
 //  Copyright (c) 2014 BEPiD. All rights reserved.
 //
 
-#import "MaterialCollectionViewController.h"
-#import "Store.h"
-#import "Material.h"
+#import "SeeTeacherViewController.h"
 #import "ClassCell.h"
-#import "Classroom.h"
 
-@interface MaterialCollectionViewController () <NSFetchedResultsControllerDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@interface SeeTeacherViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *formation;
+@property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UILabel *address;
+@property (weak, nonatomic) IBOutlet UILabel *age;
+@property (weak, nonatomic) IBOutlet UILabel *phone;
 @end
 
-@implementation MaterialCollectionViewController
+@implementation SeeTeacherViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,8 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.name.text = self.currentMaterial.name;
-	NSLog(@"%@",self.currentMaterial);
+	
+	self.navigationItem.title = self.selectedTeacher.name;
+	self.photo.image = self.selectedTeacher.photo ? [UIImage imageWithData:self.selectedTeacher.photo] : self.photo.image;
+	self.address.text = self.selectedTeacher.address;
+	self.age.text = [self.selectedTeacher.age stringValue];
+	self.phone.text = self.selectedTeacher.phone;
+
 	// Do any additional setup after loading the view.
 }
 
@@ -42,10 +48,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
--(void)viewWillAppear:(BOOL)animated{
-	[self.collectionView reloadData];
-}
 #pragma mark collection view
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -56,7 +58,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return [self.currentMaterial.classesThatUses count];
+    return [self.selectedTeacher.responsibleClasses count];
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -64,14 +66,13 @@
 {
     ClassCell *cell = (ClassCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    Classroom *object = [self.currentMaterial.classesThatUses allObjects][indexPath.row];
+    Teacher *object = [self.selectedTeacher.responsibleClasses allObjects][indexPath.row];
 	
 	cell.image.image = object.photo ? [UIImage imageWithData: object.photo] : cell.image.image;
 	cell.name.text = object.name;
 	
     return cell;
 }
-
 
 
 

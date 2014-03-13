@@ -36,6 +36,10 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
 }
+-(void)viewWillAppear:(BOOL)animated{
+	[self.tableView reloadData];
+}
+
 - (IBAction)didChangeSwitch:(UISwitch*)sender {
 	CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
 	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];

@@ -9,5 +9,5 @@
 #import "Teacher.h"
 
 @interface Teacher (CoreDataMethods)
-+(Teacher*)createUniqueTeacherInContext:(NSManagedObjectContext*)context withName:(NSString*)name withAge:(NSNumber*)age withPhone:(NSString*)phone withAddress:(NSString*)address withFormation:(NSString*)formation;
++(Teacher*)createUniqueTeacherInContext:(NSManagedObjectContext*)context withName:(NSString*)name withAge:(NSNumber*)age withPhone:(NSString*)phone withAddress:(NSString*)address withFormation:(NSString*)formation withResponsibleClasses:(NSSet*)classes;
 @end

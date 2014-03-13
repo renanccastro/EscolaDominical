@@ -9,6 +9,7 @@
 #import "TeacherRegistryViewController.h"
 #import "Store.h"
 #import "Teacher+CoreDataMethods.h"
+#import "ClassSelectionTableViewController.h"
 
 @interface TeacherRegistryViewController ()
 @property (nonatomic) NSManagedObjectContext* context;
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *address2;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *formation;
+@property (nonatomic) NSMutableSet* selectedClassrooms;
 
 @end
 
@@ -37,6 +39,7 @@
     [super viewDidLoad];
 	self.context = [[Store sharedManager] newPrivateContext];
 	self.context.undoManager = nil;
+	self.selectedClassrooms = [[NSMutableSet alloc] init];
 }
 
 
@@ -46,11 +49,13 @@
 		NSString* address = [NSString stringWithFormat:@"%@ %@", [self.address1.text isEqualToString:@"type here"] ? @"" : self.address1.text,
 							 [self.address2.text isEqualToString:@"type here"] ? @"" : [NSString stringWithFormat:@", %@", self.address2.text]];
 		
-		[Teacher createUniqueTeacherInContext:self.context withName:[self.name.text isEqualToString:@"type here"] ? nil : self.name.text
+		Teacher* teacher = [Teacher createUniqueTeacherInContext:self.context withName:[self.name.text isEqualToString:@"type here"] ? nil : self.name.text
 									  withAge:[self.age.text isEqualToString:@"type here"] ? nil :  [NSNumber numberWithInt:[self.age.text intValue]]
 									withPhone:[self.phoneNumber.text isEqualToString:@"type here"] ? nil : self.phoneNumber.text
 								  withAddress:address
-								withFormation:[self.formation.text isEqualToString:@"type here"] ? nil : self.formation.text];
+								withFormation:[self.formation.text isEqualToString:@"type here"] ? nil : self.formation.text
+								  withResponsibleClasses:self.selectedClassrooms];
+		NSLog(@"%@",teacher.responsibleClasses);
 		
 		
 	}];
@@ -139,5 +144,14 @@
 	[textField resignFirstResponder];
 	return YES;
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	if ([[segue identifier] isEqualToString:@"responsibleClasses"]) {
+		ClassSelectionTableViewController* vc = [segue destinationViewController];
+		vc.selectedClassrooms = self.selectedClassrooms;
+		vc.context = self.context;
+	}
+}
+
 
 @end

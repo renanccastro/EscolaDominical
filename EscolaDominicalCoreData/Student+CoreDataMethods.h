@@ -7,7 +7,8 @@
 //
 
 #import "Student.h"
+#import "Classroom.h"
 
 @interface Student (CoreDataMethods)
-+(Student*)createUniqueStudentInContext:(NSManagedObjectContext*)context withName:(NSString*)name withAge:(NSNumber*)age withPhone:(NSString*)phone withAddress:(NSString*)address;
++(Student*)createUniqueStudentInContext:(NSManagedObjectContext*)context withName:(NSString*)name withAge:(NSNumber*)age withPhone:(NSString*)phone withAddress:(NSString*)address withAttendingClass:(Classroom*)attendingClass;
 @end

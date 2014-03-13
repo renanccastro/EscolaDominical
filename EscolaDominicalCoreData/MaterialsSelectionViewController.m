@@ -36,6 +36,10 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
 }
+-(void)viewWillAppear:(BOOL)animated{
+	[self.tableView reloadData];
+}
+
 - (IBAction)didChangeSwitch:(UISwitch*)sender {
 	CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
 	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
@@ -158,7 +162,7 @@
 - (void)configureCell:(SelectionCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Material *info = [_fetchedResultsController objectAtIndexPath:indexPath];
     cell.name.text = info.name;
-	cell.photo.image = info.photo ? [UIImage imageWithData:info.photo] : [UIImage imageNamed:@"noPhoto"];
+	cell.photo.image = info.photo ? [UIImage imageWithData:info.photo] : cell.photo.image;
 	cell.selectedStatus.on = [self.selectedMaterials containsObject:info];
 }
 

@@ -9,14 +9,17 @@
 #import "StudentRegistryViewController.h"
 #import "Store.h"
 #import "Student+CoreDataMethods.h"
+#import "Classroom.h"
+#import "SelectUniqueClassromTableViewController.h"
 
-@interface StudentRegistryViewController ()  <UITextFieldDelegate>
+@interface StudentRegistryViewController ()  <UITextFieldDelegate, SecondViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *age;
 @property (nonatomic) NSManagedObjectContext *context;
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *address1;
 @property (weak, nonatomic) IBOutlet UITextField *address2;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (nonatomic)	Classroom* attendingClassroom;
 
 @end
 
@@ -48,7 +51,9 @@
 		[Student createUniqueStudentInContext:self.context withName:[self.name.text isEqualToString:@"type here"] ? nil : self.name.text
 									  withAge:[self.age.text isEqualToString:@"type here"] ? nil :  [NSNumber numberWithInt:[self.age.text intValue]]
 									  withPhone:[self.phoneNumber.text isEqualToString:@"type here"] ? nil : self.phoneNumber.text
-									withAddress:address];
+									withAddress:address
+									withAttendingClass:self.attendingClassroom];
+		NSLog(@"%@", self.attendingClassroom);
 		
 		
 	}];
@@ -138,6 +143,15 @@
 	return YES;
 }
 
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	if ([[segue identifier] isEqualToString:@"attendingClass"]) {
+		SelectUniqueClassromTableViewController* vc  = [segue destinationViewController];
+		vc.context = self.context;
+		vc.delegate = self;
+	}
+}
+-(void)secondViewControllerDidFinish:(Classroom *)selectedClassroom{
+	self.attendingClassroom = selectedClassroom;
+}
 
 @end

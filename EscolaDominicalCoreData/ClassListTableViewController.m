@@ -10,10 +10,12 @@
 #import "Store.h"
 #import "Classroom.h"
 #import "StudentCell.h"
+#import "SeeClassroomViewController.h"
 
 @interface ClassListTableViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic) NSManagedObjectContext* context;
 @property (nonatomic) NSFetchedResultsController* fetchedResultsController;
+@property (nonatomic) Classroom* selectedClassroom;
 @end
 
 @implementation ClassListTableViewController
@@ -150,9 +152,7 @@
 - (void)configureCell:(StudentCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Classroom *info = [_fetchedResultsController objectAtIndexPath:indexPath];
     cell.name.text = info.name;
-	
-	//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
-	//								 info.city, info.state];
+	cell.photo.image = info.photo ? [UIImage imageWithData:info.photo] : cell.photo.image;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -167,5 +167,17 @@
     [self configureCell:cell atIndexPath:indexPath];
 	
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	self.selectedClassroom = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self performSegueWithIdentifier:@"seeClassroom" sender:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	if ([[segue identifier] isEqualToString:@"seeClassroom"]) {
+		SeeClassroomViewController* vc = [segue destinationViewController];
+		vc.selectedClassroom = self.selectedClassroom;
+	}
 }
 @end

@@ -9,7 +9,7 @@
 #import "Teacher+CoreDataMethods.h"
 
 @implementation Teacher (CoreDataMethods)
-+(Teacher*)createUniqueTeacherInContext:(NSManagedObjectContext*)context withName:(NSString*)name withAge:(NSNumber*)age withPhone:(NSString*)phone withAddress:(NSString*)address withFormation:(NSString*)formation{
++(Teacher*)createUniqueTeacherInContext:(NSManagedObjectContext*)context withName:(NSString*)name withAge:(NSNumber*)age withPhone:(NSString*)phone withAddress:(NSString*)address withFormation:(NSString*)formation withResponsibleClasses:(NSSet*)classes{
 	NSEntityDescription *entityDescription = [NSEntityDescription
 											  
 											  entityForName:@"Teacher" inManagedObjectContext:context];
@@ -32,6 +32,7 @@
 		teacher.phone = phone;
 		teacher.address = address;
 		teacher.formation = formation;
+		[teacher addResponsibleClasses:classes];
 		NSError *error;
 		[context save:&error];
 		[context.parentContext performBlockAndWait:^{

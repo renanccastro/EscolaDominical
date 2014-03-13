@@ -41,6 +41,9 @@
 	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
 	[self didChangeStatusSwitch:indexPath toStatus:sender.isOn];
 }
+-(void)viewWillAppear:(BOOL)animated{
+	[self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {

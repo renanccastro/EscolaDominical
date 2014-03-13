@@ -43,6 +43,12 @@
 		E85B1FA618BFACEF00A622CB /* PhoneFormats.dat in Resources */ = {isa = PBXBuildFile; fileRef = E85B1FA518BFACEF00A622CB /* PhoneFormats.dat */; };
 		E85B1FBA18BFB63800A622CB /* Student+CoreDataMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E85B1FB918BFB63800A622CB /* Student+CoreDataMethods.m */; };
 		E895E17218CE4BDC00D814C0 /* ClassRegistryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E895E17118CE4BDC00D814C0 /* ClassRegistryViewController.m */; };
+		E8A4E6FA18D2118500FEE63F /* SeeStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E6F918D2118500FEE63F /* SeeStudentViewController.m */; };
+		E8A4E6FD18D2153B00FEE63F /* SeeTeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E6FC18D2153B00FEE63F /* SeeTeacherViewController.m */; };
+		E8A4E70118D2221800FEE63F /* EditTeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E70018D2221800FEE63F /* EditTeacherViewController.m */; };
+		E8A4E70418D2236E00FEE63F /* ClassSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E70318D2236E00FEE63F /* ClassSelectionTableViewController.m */; };
+		E8A4E70718D227B800FEE63F /* SelectUniqueClassromTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E70618D227B800FEE63F /* SelectUniqueClassromTableViewController.m */; };
+		E8A4E70C18D230E000FEE63F /* SeeClassroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E70B18D230E000FEE63F /* SeeClassroomViewController.m */; };
 		E8ACAFB818CE459100BB8F18 /* SelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ACAFB718CE459100BB8F18 /* SelectionCell.m */; };
 		E8ACAFBB18CE466D00BB8F18 /* MaterialsSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ACAFBA18CE466D00BB8F18 /* MaterialsSelectionViewController.m */; };
 		E8ACAFBE18CE467F00BB8F18 /* StudentsSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ACAFBD18CE467F00BB8F18 /* StudentsSelectionViewController.m */; };
@@ -122,6 +128,18 @@
 		E85B1FB918BFB63800A622CB /* Student+CoreDataMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataMethods.m"; sourceTree = "<group>"; };
 		E895E17018CE4BDC00D814C0 /* ClassRegistryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassRegistryViewController.h; sourceTree = "<group>"; };
 		E895E17118CE4BDC00D814C0 /* ClassRegistryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassRegistryViewController.m; sourceTree = "<group>"; };
+		E8A4E6F818D2118500FEE63F /* SeeStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeStudentViewController.h; sourceTree = "<group>"; };
+		E8A4E6F918D2118500FEE63F /* SeeStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeStudentViewController.m; sourceTree = "<group>"; };
+		E8A4E6FB18D2153B00FEE63F /* SeeTeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeTeacherViewController.h; sourceTree = "<group>"; };
+		E8A4E6FC18D2153B00FEE63F /* SeeTeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeTeacherViewController.m; sourceTree = "<group>"; };
+		E8A4E6FF18D2221800FEE63F /* EditTeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTeacherViewController.h; sourceTree = "<group>"; };
+		E8A4E70018D2221800FEE63F /* EditTeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTeacherViewController.m; sourceTree = "<group>"; };
+		E8A4E70218D2236E00FEE63F /* ClassSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSelectionTableViewController.h; sourceTree = "<group>"; };
+		E8A4E70318D2236E00FEE63F /* ClassSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSelectionTableViewController.m; sourceTree = "<group>"; };
+		E8A4E70518D227B800FEE63F /* SelectUniqueClassromTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectUniqueClassromTableViewController.h; sourceTree = "<group>"; };
+		E8A4E70618D227B800FEE63F /* SelectUniqueClassromTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectUniqueClassromTableViewController.m; sourceTree = "<group>"; };
+		E8A4E70A18D230E000FEE63F /* SeeClassroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeClassroomViewController.h; sourceTree = "<group>"; };
+		E8A4E70B18D230E000FEE63F /* SeeClassroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeClassroomViewController.m; sourceTree = "<group>"; };
 		E8ACAFB618CE459100BB8F18 /* SelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCell.h; sourceTree = "<group>"; };
 		E8ACAFB718CE459100BB8F18 /* SelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCell.m; sourceTree = "<group>"; };
 		E8ACAFB918CE466D00BB8F18 /* MaterialsSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsSelectionViewController.h; sourceTree = "<group>"; };
@@ -209,43 +227,17 @@
 		E84EC9FD18BE624D0033740D /* EscolaDominicalCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				E8A4E6F718D2115100FEE63F /* Controller */,
 				E842D2AB18D0EA3E003192BF /* View */,
 				E85B1FB618BFB60C00A622CB /* Core Data */,
 				E84ECA0618BE624D0033740D /* AppDelegate.h */,
 				E84ECA0718BE624D0033740D /* AppDelegate.m */,
-				E84ECA2C18BE62690033740D /* Store.h */,
-				E84ECA2D18BE62690033740D /* Store.m */,
 				E85B1FA518BFACEF00A622CB /* PhoneFormats.dat */,
 				E84ECA0918BE624D0033740D /* Main.storyboard */,
 				E84ECA0C18BE624D0033740D /* ViewController.h */,
 				E84ECA0D18BE624D0033740D /* ViewController.m */,
 				E84ECA0F18BE624D0033740D /* Images.xcassets */,
-				E84ECA3118BE638C0033740D /* EscolaDominical.xcdatamodeld */,
 				E84EC9FE18BE624D0033740D /* Supporting Files */,
-				E85B1F9E18BF9EE300A622CB /* StudentRegistryViewController.h */,
-				E85B1F9F18BF9EE300A622CB /* StudentRegistryViewController.m */,
-				E842D29618CF8C18003192BF /* TeacherRegistryViewController.h */,
-				E842D29718CF8C18003192BF /* TeacherRegistryViewController.m */,
-				E842D2A218D0CC23003192BF /* MaterialRegistryViewController.h */,
-				E842D2A318D0CC23003192BF /* MaterialRegistryViewController.m */,
-				E8B92B4E18CE25CB00D2C94F /* StudentListViewController.h */,
-				E8B92B4F18CE25CB00D2C94F /* StudentListViewController.m */,
-				E842D29318CF8C07003192BF /* TeacherListViewController.h */,
-				E842D29418CF8C07003192BF /* TeacherListViewController.m */,
-				E842D29F18D0CB7F003192BF /* MaterialsListViewController.h */,
-				E842D2A018D0CB7F003192BF /* MaterialsListViewController.m */,
-				E8ACAFB918CE466D00BB8F18 /* MaterialsSelectionViewController.h */,
-				E8ACAFBA18CE466D00BB8F18 /* MaterialsSelectionViewController.m */,
-				E8ACAFBC18CE467F00BB8F18 /* StudentsSelectionViewController.h */,
-				E8ACAFBD18CE467F00BB8F18 /* StudentsSelectionViewController.m */,
-				E8ACAFBF18CE46A400BB8F18 /* TeachersSelectionViewController.h */,
-				E8ACAFC018CE46A400BB8F18 /* TeachersSelectionViewController.m */,
-				E895E17018CE4BDC00D814C0 /* ClassRegistryViewController.h */,
-				E895E17118CE4BDC00D814C0 /* ClassRegistryViewController.m */,
-				E842D29018CF8989003192BF /* ClassListTableViewController.h */,
-				E842D29118CF8989003192BF /* ClassListTableViewController.m */,
-				E842D2A818D0E96B003192BF /* MaterialCollectionViewController.h */,
-				E842D2A918D0E96B003192BF /* MaterialCollectionViewController.m */,
 			);
 			path = EscolaDominicalCoreData;
 			sourceTree = "<group>";
@@ -282,6 +274,9 @@
 		E85B1FB618BFB60C00A622CB /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				E84ECA2C18BE62690033740D /* Store.h */,
+				E84ECA2D18BE62690033740D /* Store.m */,
+				E84ECA3118BE638C0033740D /* EscolaDominical.xcdatamodeld */,
 				E842D2D418D0F001003192BF /* Teacher.h */,
 				E842D2D518D0F001003192BF /* Teacher.m */,
 				E842D2D118D0F000003192BF /* Attendence.h */,
@@ -310,6 +305,73 @@
 				E842D2A618D0CD52003192BF /* Material+CoreDataMethods.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		E8A4E6F718D2115100FEE63F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E8A4E70918D228E800FEE63F /* Student */,
+				E8A4E70818D228C900FEE63F /* Classroom */,
+				E8A4E6FE18D221FA00FEE63F /* Teacher */,
+				E842D2A218D0CC23003192BF /* MaterialRegistryViewController.h */,
+				E842D2A318D0CC23003192BF /* MaterialRegistryViewController.m */,
+				E842D29F18D0CB7F003192BF /* MaterialsListViewController.h */,
+				E842D2A018D0CB7F003192BF /* MaterialsListViewController.m */,
+				E8ACAFB918CE466D00BB8F18 /* MaterialsSelectionViewController.h */,
+				E8ACAFBA18CE466D00BB8F18 /* MaterialsSelectionViewController.m */,
+				E842D2A818D0E96B003192BF /* MaterialCollectionViewController.h */,
+				E842D2A918D0E96B003192BF /* MaterialCollectionViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E8A4E6FE18D221FA00FEE63F /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				E842D29718CF8C18003192BF /* TeacherRegistryViewController.m */,
+				E842D29618CF8C18003192BF /* TeacherRegistryViewController.h */,
+				E842D29318CF8C07003192BF /* TeacherListViewController.h */,
+				E842D29418CF8C07003192BF /* TeacherListViewController.m */,
+				E8ACAFBF18CE46A400BB8F18 /* TeachersSelectionViewController.h */,
+				E8ACAFC018CE46A400BB8F18 /* TeachersSelectionViewController.m */,
+				E8A4E6FB18D2153B00FEE63F /* SeeTeacherViewController.h */,
+				E8A4E6FC18D2153B00FEE63F /* SeeTeacherViewController.m */,
+				E8A4E6FF18D2221800FEE63F /* EditTeacherViewController.h */,
+				E8A4E70018D2221800FEE63F /* EditTeacherViewController.m */,
+			);
+			name = Teacher;
+			sourceTree = "<group>";
+		};
+		E8A4E70818D228C900FEE63F /* Classroom */ = {
+			isa = PBXGroup;
+			children = (
+				E895E17018CE4BDC00D814C0 /* ClassRegistryViewController.h */,
+				E895E17118CE4BDC00D814C0 /* ClassRegistryViewController.m */,
+				E842D29018CF8989003192BF /* ClassListTableViewController.h */,
+				E842D29118CF8989003192BF /* ClassListTableViewController.m */,
+				E8A4E70218D2236E00FEE63F /* ClassSelectionTableViewController.h */,
+				E8A4E70318D2236E00FEE63F /* ClassSelectionTableViewController.m */,
+				E8A4E70518D227B800FEE63F /* SelectUniqueClassromTableViewController.h */,
+				E8A4E70618D227B800FEE63F /* SelectUniqueClassromTableViewController.m */,
+				E8A4E70A18D230E000FEE63F /* SeeClassroomViewController.h */,
+				E8A4E70B18D230E000FEE63F /* SeeClassroomViewController.m */,
+			);
+			name = Classroom;
+			sourceTree = "<group>";
+		};
+		E8A4E70918D228E800FEE63F /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				E85B1F9E18BF9EE300A622CB /* StudentRegistryViewController.h */,
+				E85B1F9F18BF9EE300A622CB /* StudentRegistryViewController.m */,
+				E8B92B4E18CE25CB00D2C94F /* StudentListViewController.h */,
+				E8B92B4F18CE25CB00D2C94F /* StudentListViewController.m */,
+				E8ACAFBC18CE467F00BB8F18 /* StudentsSelectionViewController.h */,
+				E8ACAFBD18CE467F00BB8F18 /* StudentsSelectionViewController.m */,
+				E8A4E6F818D2118500FEE63F /* SeeStudentViewController.h */,
+				E8A4E6F918D2118500FEE63F /* SeeStudentViewController.m */,
+			);
+			name = Student;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +474,7 @@
 			files = (
 				E842D2D618D0F001003192BF /* Teacher.m in Sources */,
 				E8B92B4D18CE24A400D2C94F /* StudentCell.m in Sources */,
+				E8A4E70718D227B800FEE63F /* SelectUniqueClassromTableViewController.m in Sources */,
 				E842D2A718D0CD52003192BF /* Material+CoreDataMethods.m in Sources */,
 				E842D29B18CF8D9E003192BF /* Teacher+CoreDataMethods.m in Sources */,
 				E8ACAFB818CE459100BB8F18 /* SelectionCell.m in Sources */,
@@ -421,6 +484,7 @@
 				E8ACAFBB18CE466D00BB8F18 /* MaterialsSelectionViewController.m in Sources */,
 				E895E17218CE4BDC00D814C0 /* ClassRegistryViewController.m in Sources */,
 				E842D29218CF8989003192BF /* ClassListTableViewController.m in Sources */,
+				E8A4E70418D2236E00FEE63F /* ClassSelectionTableViewController.m in Sources */,
 				E84ECA3318BE638C0033740D /* EscolaDominical.xcdatamodeld in Sources */,
 				E85B1FBA18BFB63800A622CB /* Student+CoreDataMethods.m in Sources */,
 				E842D2A118D0CB7F003192BF /* MaterialsListViewController.m in Sources */,
@@ -428,16 +492,20 @@
 				E8ACAFC118CE46A400BB8F18 /* TeachersSelectionViewController.m in Sources */,
 				E842D29518CF8C07003192BF /* TeacherListViewController.m in Sources */,
 				E842D2D018D0F000003192BF /* Student.m in Sources */,
+				E8A4E70C18D230E000FEE63F /* SeeClassroomViewController.m in Sources */,
 				E842D2CA18D0EFFF003192BF /* Classroom.m in Sources */,
 				E84ECA0E18BE624D0033740D /* ViewController.m in Sources */,
 				E84ECA0818BE624D0033740D /* AppDelegate.m in Sources */,
 				E842D2D318D0F001003192BF /* Attendence.m in Sources */,
 				E84ECA0418BE624D0033740D /* main.m in Sources */,
+				E8A4E70118D2221800FEE63F /* EditTeacherViewController.m in Sources */,
 				E84ECA2E18BE62690033740D /* Store.m in Sources */,
+				E8A4E6FA18D2118500FEE63F /* SeeStudentViewController.m in Sources */,
 				E8B92B5018CE25CB00D2C94F /* StudentListViewController.m in Sources */,
 				E85B1FA018BF9EE300A622CB /* StudentRegistryViewController.m in Sources */,
 				E842D2AE18D0EAA7003192BF /* ClassCell.m in Sources */,
 				E8ACAFBE18CE467F00BB8F18 /* StudentsSelectionViewController.m in Sources */,
+				E8A4E6FD18D2153B00FEE63F /* SeeTeacherViewController.m in Sources */,
 				E842D2AA18D0E96B003192BF /* MaterialCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

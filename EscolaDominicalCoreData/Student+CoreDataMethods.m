@@ -10,7 +10,7 @@
 
 @implementation Student (CoreDataMethods)
 
-+(Student*)createUniqueStudentInContext:(NSManagedObjectContext*)context withName:(NSString*)name withAge:(NSNumber*)age withPhone:(NSString*)phone withAddress:(NSString*)address{
++(Student*)createUniqueStudentInContext:(NSManagedObjectContext*)context withName:(NSString*)name withAge:(NSNumber*)age withPhone:(NSString*)phone withAddress:(NSString*)address withAttendingClass:(Classroom*)attendingClass{
 	NSEntityDescription *entityDescription = [NSEntityDescription
 											  
 											  entityForName:@"Student" inManagedObjectContext:context];
@@ -32,6 +32,7 @@
 		student.age = age;
 		student.phone = phone;
 		student.address = address;
+		student.attendingClass = attendingClass;
 		NSError *error;
 		[context save:&error];
 		[context.parentContext performBlockAndWait:^{
