@@ -1142,20 +1142,28 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bookCover" translatesAutoresizingMaskIntoConstraints="NO" id="OY6-0n-7WO">
-                                <rect key="frame" x="65" y="73" width="191" height="144"/>
+                                <rect key="frame" x="65" y="85" width="191" height="144"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFj-aR-XIL">
-                                <rect key="frame" x="0.0" y="273" width="56" height="21"/>
+                                <rect key="frame" x="0.0" y="249" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1z-xJ-mPV">
-                                <rect key="frame" x="124" y="249" width="46" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lala de lalala" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="233" translatesAutoresizingMaskIntoConstraints="NO" id="23J-IF-BNd">
+                                <rect key="frame" x="67" y="244" width="233" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Classes using:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="UMJ-pK-rfi">
+                                <rect key="frame" x="0.0" y="278" width="320" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-I8-0UR">
@@ -1205,8 +1213,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="See Material" id="SgZ-Xz-6R9"/>
                     <connections>
+                        <outlet property="author" destination="23J-IF-BNd" id="abo-Rf-Ae2"/>
                         <outlet property="collectionView" destination="7eP-I8-0UR" id="1dH-yt-17u"/>
-                        <outlet property="name" destination="D1z-xJ-mPV" id="a0X-Dz-VOY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAP-WP-TMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1449,9 +1457,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="See Teacher" id="up0-Xe-ffr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dN4-dR-hxp"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="See Teacher" id="up0-Xe-ffr"/>
                     <connections>
                         <outlet property="address" destination="gD5-US-tc4" id="bxB-c6-MR3"/>
                         <outlet property="age" destination="mP7-PD-hfD" id="QWK-AG-pW6"/>
@@ -1566,7 +1572,7 @@
             </objects>
             <point key="canvasLocation" x="3149" y="2579"/>
         </scene>
-        <!--See Classroom View Controller - See Material-->
+        <!--See Classroom View Controller - See Classroom-->
         <scene sceneID="bbX-cf-P2h">
             <objects>
                 <viewController id="2mw-Ef-PIb" customClass="SeeClassroomViewController" sceneMemberID="viewController">
@@ -1610,25 +1616,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUn-VC-ls5">
-                                <rect key="frame" x="137" y="158" width="46" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZV7-8o-sH3">
                                 <rect key="frame" x="20" y="286" width="266" height="213"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wLK-tD-rJ1">
                                     <size key="itemSize" width="65" height="71"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ksS-xn-PTA" customClass="ClassCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="71"/>
+                                        <rect key="frame" x="0.0" y="50" width="65" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="65" height="71"/>
@@ -1653,6 +1653,28 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="0hh-Xy-8si" customClass="Header">
+                                    <rect key="frame" x="0.0" y="0.0" width="266" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbI-mh-XiM">
+                                            <rect key="frame" x="0.0" y="0.0" width="266" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zbI-mh-XiM" firstAttribute="top" secondItem="0hh-Xy-8si" secondAttribute="top" id="1GC-sM-Yxq"/>
+                                        <constraint firstItem="zbI-mh-XiM" firstAttribute="leading" secondItem="0hh-Xy-8si" secondAttribute="leading" id="IOu-dh-f1X"/>
+                                        <constraint firstAttribute="trailing" secondItem="zbI-mh-XiM" secondAttribute="trailing" id="X4a-n8-txo"/>
+                                        <constraint firstAttribute="bottom" secondItem="zbI-mh-XiM" secondAttribute="bottom" id="jGY-CF-5Ea"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="title" destination="zbI-mh-XiM" id="SL8-cT-IKg"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="2mw-Ef-PIb" id="0JF-7R-Qod"/>
                                     <outlet property="delegate" destination="2mw-Ef-PIb" id="d2g-ML-zoJ"/>
@@ -1661,10 +1683,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="See Material" id="3PT-Ih-bsX"/>
+                    <navigationItem key="navigationItem" title="See Classroom" id="3PT-Ih-bsX"/>
                     <connections>
                         <outlet property="collectionView" destination="ZV7-8o-sH3" id="3t8-EY-T31"/>
-                        <outlet property="name" destination="EUn-VC-ls5" id="hGh-JL-xzO"/>
+                        <outlet property="maxStudents" destination="i5y-kL-xhh" id="anz-Xs-vq7"/>
+                        <outlet property="minAge" destination="oSW-oU-Cca" id="xyZ-Ff-qBi"/>
                         <outlet property="photo" destination="gef-Yw-KJv" id="Db7-c2-20d"/>
                     </connections>
                 </viewController>

@@ -49,6 +49,7 @@
 		E8A4E70418D2236E00FEE63F /* ClassSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E70318D2236E00FEE63F /* ClassSelectionTableViewController.m */; };
 		E8A4E70718D227B800FEE63F /* SelectUniqueClassromTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E70618D227B800FEE63F /* SelectUniqueClassromTableViewController.m */; };
 		E8A4E70C18D230E000FEE63F /* SeeClassroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E70B18D230E000FEE63F /* SeeClassroomViewController.m */; };
+		E8A4E70F18D33E2E00FEE63F /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A4E70E18D33E2E00FEE63F /* Header.m */; };
 		E8ACAFB818CE459100BB8F18 /* SelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ACAFB718CE459100BB8F18 /* SelectionCell.m */; };
 		E8ACAFBB18CE466D00BB8F18 /* MaterialsSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ACAFBA18CE466D00BB8F18 /* MaterialsSelectionViewController.m */; };
 		E8ACAFBE18CE467F00BB8F18 /* StudentsSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ACAFBD18CE467F00BB8F18 /* StudentsSelectionViewController.m */; };
@@ -140,6 +141,8 @@
 		E8A4E70618D227B800FEE63F /* SelectUniqueClassromTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectUniqueClassromTableViewController.m; sourceTree = "<group>"; };
 		E8A4E70A18D230E000FEE63F /* SeeClassroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeClassroomViewController.h; sourceTree = "<group>"; };
 		E8A4E70B18D230E000FEE63F /* SeeClassroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeClassroomViewController.m; sourceTree = "<group>"; };
+		E8A4E70D18D33E2E00FEE63F /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		E8A4E70E18D33E2E00FEE63F /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
 		E8ACAFB618CE459100BB8F18 /* SelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCell.h; sourceTree = "<group>"; };
 		E8ACAFB718CE459100BB8F18 /* SelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCell.m; sourceTree = "<group>"; };
 		E8ACAFB918CE466D00BB8F18 /* MaterialsSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsSelectionViewController.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				E8ACAFB718CE459100BB8F18 /* SelectionCell.m */,
 				E842D2AC18D0EAA7003192BF /* ClassCell.h */,
 				E842D2AD18D0EAA7003192BF /* ClassCell.m */,
+				E8A4E70D18D33E2E00FEE63F /* Header.h */,
+				E8A4E70E18D33E2E00FEE63F /* Header.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				E84ECA3318BE638C0033740D /* EscolaDominical.xcdatamodeld in Sources */,
 				E85B1FBA18BFB63800A622CB /* Student+CoreDataMethods.m in Sources */,
 				E842D2A118D0CB7F003192BF /* MaterialsListViewController.m in Sources */,
+				E8A4E70F18D33E2E00FEE63F /* Header.m in Sources */,
 				E842D29818CF8C18003192BF /* TeacherRegistryViewController.m in Sources */,
 				E8ACAFC118CE46A400BB8F18 /* TeachersSelectionViewController.m in Sources */,
 				E842D29518CF8C07003192BF /* TeacherListViewController.m in Sources */,

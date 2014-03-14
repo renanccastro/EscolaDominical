@@ -13,7 +13,7 @@
 #import "Classroom.h"
 
 @interface MaterialCollectionViewController () <NSFetchedResultsControllerDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *author;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @end
 
@@ -31,7 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.name.text = self.currentMaterial.name;
+	self.navigationItem.title = self.currentMaterial.name;
+	self.author.text = self.currentMaterial.author;
 	NSLog(@"%@",self.currentMaterial);
 	// Do any additional setup after loading the view.
 }

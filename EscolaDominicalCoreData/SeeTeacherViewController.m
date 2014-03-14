@@ -38,6 +38,7 @@
 	self.address.text = self.selectedTeacher.address;
 	self.age.text = [self.selectedTeacher.age stringValue];
 	self.phone.text = self.selectedTeacher.phone;
+	self.formation.text = self.selectedTeacher.formation;
 
 	// Do any additional setup after loading the view.
 }

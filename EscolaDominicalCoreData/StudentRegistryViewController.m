@@ -57,7 +57,7 @@
 		
 		
 	}];
-	
+	[self.navigationController popViewControllerAnimated:YES];
 	
 }
 

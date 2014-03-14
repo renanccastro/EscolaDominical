@@ -85,6 +85,7 @@
 		NSLog(@"%@",classroom.name);
 		
 	}];
+		[self.navigationController popViewControllerAnimated:YES];
 }
 
 -(BOOL) textFieldShouldBeginEditing:(UITextField *)textField{

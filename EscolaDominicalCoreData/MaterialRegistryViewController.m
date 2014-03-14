@@ -38,11 +38,9 @@
 
 - (IBAction)saveMaterial:(id)sender {
 	[self.context performBlockAndWait:^{
-		
 		[Material createUniqueMaterialInContext:self.context withName:[self.name.text isEqualToString:@"type here"] ? nil : self.name.text withAuthor:[self.author.text isEqualToString:@"type here"] ? nil : self.author.text];
-		
-		
 	}];
+	[self.navigationController popViewControllerAnimated:YES];
 	
 
 }
