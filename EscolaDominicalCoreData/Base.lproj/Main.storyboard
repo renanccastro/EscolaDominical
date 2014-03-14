@@ -140,7 +140,7 @@
         <scene sceneID="zWG-5J-KwS">
             <objects>
                 <navigationController title="Teste" automaticallyAdjustsScrollViewInsets="NO" id="dOK-TE-OSV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Classes" id="9TP-2c-4dO"/>
+                    <tabBarItem key="tabBarItem" title="Classes" image="university-25" id="9TP-2c-4dO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c2F-90-DnM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -399,7 +399,7 @@
         <scene sceneID="tZ4-lb-F7e">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qU8-SH-Zme" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Students" id="IXC-4C-fNY"/>
+                    <tabBarItem key="tabBarItem" title="Students" image="student-26" id="IXC-4C-fNY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gPl-gj-Ixc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -971,7 +971,7 @@
         <scene sceneID="oRQ-0q-Mbb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kx0-8G-Tze" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Teachers" id="aPg-c2-lYh"/>
+                    <tabBarItem key="tabBarItem" title="Teachers" image="music_conductor-32" id="aPg-c2-lYh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6n8-a9-9q1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1225,7 +1225,7 @@
         <scene sceneID="WPU-4U-iCY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d5G-hG-oVI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Materials" id="kPv-7O-AVv"/>
+                    <tabBarItem key="tabBarItem" title="Materials" image="book_stack-26" id="kPv-7O-AVv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6H0-IH-diB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1698,8 +1698,12 @@
     </scenes>
     <resources>
         <image name="bookCover" width="799" height="1178"/>
+        <image name="book_stack-26" width="26" height="26"/>
         <image name="classroom" width="712" height="691"/>
+        <image name="music_conductor-32" width="32" height="32"/>
         <image name="noPhoto" width="205" height="244"/>
+        <image name="student-26" width="26" height="26"/>
+        <image name="university-25" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
